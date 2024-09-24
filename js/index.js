@@ -47,3 +47,24 @@ calculateSavingButton.addEventListener("click", function () {
   const remainingElement = document.getElementById('remaining-balance')
   remainingElement.innerText = remainingBalance.toFixed(2)
 });
+
+
+
+//history tab functionality
+const historyTab = document.getElementById('history-tab')
+const assistantTab = document.getElementById('assistant-tab')
+historyTab.addEventListener('click', function(){
+
+      historyTab.classList.add(
+        "text-white",
+        "bg-gradient-to-r",
+        "from-blue-500",
+        "to-purple-600"
+    )
+    assistantTab.classList.remove(
+        "text-white",
+        "bg-gradient-to-r",
+        "from-blue-500",
+        "to-purple-600"
+    )
+})
