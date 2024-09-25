@@ -22,6 +22,19 @@ calculateButton.addEventListener("click", function () {
 
   const result = document.getElementById("results");
   result.classList.remove("hidden");
+
+  //expense history 
+  const historyItem = document.createElement('div')
+  historyItem.className = "bg-white p-3 rounded-md border-l-2 border-blue-500"
+
+  historyItem.innerHTML = `
+     <p class="text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
+     <p class="text-xs text-gray-500">Income: $${income.toFixed(2)}</p>
+     <p class="text-xs text-gray-500">Expenses: $${totalExpenses.toFixed(2)}</p>
+     <p class="text-xs text-gray-500">Balance: $${balance.toFixed(2)}</p>
+  `
+   const historyContainer = document.getElementById('history-list')
+   historyContainer.insertBefore(historyItem, historyContainer.firstChild)
 });
 
 //add event listener for calculate Saving  Button2
@@ -72,4 +85,5 @@ historyTab.addEventListener('click', function(){
     assistantTab.classList.add('text-gray-600')
 
     document.getElementById('expense-form').classList.add('hidden')
+    document.getElementById('history-section').classList.remove('hidden')
 })
